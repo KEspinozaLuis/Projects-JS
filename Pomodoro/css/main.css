@@ -1,0 +1,87 @@
+body{
+    font-family: Arial, Helvetica, san-serif;
+    background-color: #252440;
+}
+.container{
+    width: 500px;
+    margin: 0 auto;
+}
+.titlePrincipal{
+    color: #fff;
+    margin: 3rem 0;
+    text-align: center;
+}
+.app{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1.2rem 3rem 3rem;
+    border-radius: 0.5rem;
+}
+.time{
+    text-align: center;
+    font-weight: 700;
+}
+.time .value{
+    font-size: 3.5rem;
+    padding: 1.5rem 0 0.5rem;
+}
+.time .taskName {
+    font-size: 1.5rem;
+}
+.form,
+.task{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.tasks-container{
+    padding: 0 1rem;
+}
+
+.inputTask{
+    padding: 0.8rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 14rem;
+}
+.btnAdd{
+    padding: 0.8rem 1rem;
+    background: #5783bc;
+    border: 1px solid #5783bc;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.btnAdd:hover{
+    background: #014ba0;
+}
+
+.task{
+    background: #ddd;
+    border-radius: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.start-button{
+    padding: 0.2rem 1rem;
+    border: 1px solid #5ccb5f;
+    background-color: #5ccb5f;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.done{
+    background-color: #ec2300;
+    color: #fff;
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+.done + .title{
+    text-decoration: line-through;
+}
+
+.task .title{
+    font-weight: 700;
+}
