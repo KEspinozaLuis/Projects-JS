@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cart = document.querySelector('#lista-carrito tbody');
     const listCourses = document.querySelector('#lista-cursos');
+    const emptyCart = document.querySelector('#vaciar-carrito');
     let listCart = [];
 
     const loadEventListenners = () => {
         //Add product to cart
         listCourses.addEventListener('click', captureData);
+        //Delete product
+        cart.addEventListener('click', deleteCourse);
+        //Vaciar carrito
+        emptyCart.addEventListener('click', emptyAllCart);
        
     }
     
@@ -28,7 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
             price: course.querySelector('.precio span').textContent,
             quantity: 1
         }
-        listCart = [...listCart, product];
+
+        //Add Quantity si existe el producto en el carrito
+        const indexItem = listCart.findIndex(item => item.id === product.id);
+        if(indexItem !== -1){
+            listCart[indexItem].quantity += 1;
+        } else{
+            listCart = [...listCart, product];
+        }
         createHtmlProduct();
     }
 
@@ -57,6 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
         while(cart.firstChild){
             cart.removeChild(cart.firstChild);
         }
+   }
+
+   //Delete Course
+   const deleteCourse = (event) => {
+        event.preventDefault();
+        const idCourse = event.target.getAttribute('data-id');
+        listCart = listCart.filter(item => item.id !== idCourse);
+        createHtmlProduct();
+   }
+
+   //Vaciar carrito
+   const emptyAllCart = () => {
+        listCart = [];
+        createHtmlProduct();
    }
 
     loadEventListenners();
